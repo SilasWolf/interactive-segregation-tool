@@ -23,7 +23,6 @@ segregation_strength = np.array([float(input_data[i].split(',')[6]) for i in ran
 x_interp = np.linspace(np.min(combinations[:,0]), np.max(combinations[:,0]), 50)  # More refined X values
 y_interp = np.linspace(np.min(combinations[:,1]), np.max(combinations[:,1]), 50)  # More refined Y values
 x_grid, y_grid = np.meshgrid(x_interp, y_interp)
-print(combinations)
 # Interpolating the Z values
 z_interp = griddata(combinations, segregation_strength, (x_grid, y_grid), method='linear')
 
