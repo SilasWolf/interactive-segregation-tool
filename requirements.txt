@@ -3,3 +3,4 @@ matplotlib
 scipy
 mpld3
 ipympl
+ipywidgets
