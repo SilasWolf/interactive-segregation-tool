@@ -85,11 +85,11 @@ line_y, = ax_plot_y.plot(x_interp, z_interp[0, :], linewidth=2,color='blue')
 
 # X Slider
 ax_x = fig.add_subplot(gs[4, 1])
-slider_x = Slider(ax=ax_x, valmin=x_interp.min(), label='',valmax=x_interp.max(), valinit=x_interp.min(), valstep=x_interp[1] - x_interp[0], color='red')
+slider_x = Slider(ax=ax_x, valmin=1, label='',valmax=30, valinit=x_interp.min(), valstep=1, color='red')
 
 # Y Slider (Vertical)
 ax_y = fig.add_subplot(gs[2, 0])
-slider_y = Slider(ax=ax_y,  valmin=y_interp.min(), label='',valmax=y_interp.max(), valinit=y_interp.min(), valstep=y_interp[1] - y_interp[0], color='blue', orientation='vertical')
+slider_y = Slider(ax=ax_y,  valmin=1, label='',valmax=7, valinit=y_interp.min(), valstep=0.2, color='blue', orientation='vertical')
 
 # Update function for X
 def update_x(val):
