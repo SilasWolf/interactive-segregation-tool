@@ -30,12 +30,13 @@ pip install numpy matplotlib scipy mpld3
 
 
 ### 2) Project structure
-
+```bash
 ├─ interactive_tool.py
 ├─ interactive_tool.ipynb
 ├─ requirements.txt
 ├─ README.md
 └─ summary_all.csv
+```
 
 ### 3) Run it
 ```bash
