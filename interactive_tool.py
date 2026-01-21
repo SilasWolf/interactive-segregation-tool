@@ -17,7 +17,7 @@ combinations = np.array([
      float(input_data[i].split(',')[2]) / float(input_data[i].split(',')[3]))
     for i in range(1, len(input_data))])
 
-segregation_strength = np.array([float(input_data[i].split(',')[6]) for i in range(1, len(input_data))])
+segregation_strength = np.array([float(input_data[i].split(',')[6]) * 100. for i in range(1, len(input_data))])
 
 # Interpolation Grid
 x_interp = np.linspace(np.min(combinations[:,0]), np.max(combinations[:,0]), 50)  # More refined X values
@@ -59,7 +59,7 @@ ax_heatmap.set_ylim(1, 7)
 # Colorbar
 cbar_ax = fig.add_subplot(gs[2, 3])
 cbar = plt.colorbar(heatmap, cax=cbar_ax, orientation='vertical')
-cbar.set_label('$\Delta\chi_{\mathrm{SE}}$ / -', fontsize=15, weight='bold')
+cbar.set_label('$\Delta\chi_{\mathrm{SE}}$ / %', fontsize=15, weight='bold')
 cbar.ax.tick_params(labelsize=12)
 
 max_z = np.nanmax(z_interp)
@@ -67,7 +67,7 @@ max_z = np.nanmax(z_interp)
 # Z vs Y for selected X
 ax_plot_x = fig.add_subplot(gs[2, 2])
 #ax_plot_x.set_title( fontsize=10)
-ax_plot_x.set_xlabel('$\Delta\chi_{\mathrm{SE}}$ / -', fontsize=15, weight='bold')
+ax_plot_x.set_xlabel('$\Delta\chi_{\mathrm{SE}}$ / %', fontsize=15, weight='bold')
 #ax_plot_x.set_ylabel('Size ratio / -', fontsize=10)
 ax_plot_x.tick_params(axis='both', labelsize=12)
 ax_plot_x.set_xlim(0, max_z)
@@ -78,7 +78,7 @@ line_x, = ax_plot_x.plot(z_interp[:, 0], y_interp, linewidth=2, color='red')
 ax_plot_y = fig.add_subplot(gs[0, 1])
 #ax_plot_y.set_title('Relative segregation over volume ratio\nfor selected size ratio', fontsize=10)
 #ax_plot_y.set_xlabel('Volume ratio / -', fontsize=10)
-ax_plot_y.set_ylabel('$\Delta\chi_{\mathrm{SE}}$ / -', fontsize=15, weight='bold')
+ax_plot_y.set_ylabel('$\Delta\chi_{\mathrm{SE}}$ / %', fontsize=15, weight='bold')
 ax_plot_y.tick_params(axis='both', labelsize=12)
 ax_plot_y.set_xlim(min(x_interp), max(x_interp))
 ax_plot_y.set_ylim(0, max_z)
