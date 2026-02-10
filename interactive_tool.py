@@ -8,8 +8,7 @@ from scipy.interpolate import griddata, RegularGridInterpolator
 # -----------------------------
 # Load data from simulations
 # -----------------------------
-csv_path = os.path.join(os.path.dirname(__file__), "summary_all.csv")
-with open(csv_path, "r") as input_file:
+with open('summary_all.csv', 'r') as input_file:
     input_data = input_file.readlines()
 
 combinations = np.array([
